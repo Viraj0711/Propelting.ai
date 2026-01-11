@@ -44,15 +44,12 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
-<<<<<<< HEAD
-// Error handling
-=======
+
 app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.path} from ${req.ip}`);
   next();
 });
 
->>>>>>> 86be8115964eaba0fc12d9bd4c85c35a5f1ca7de
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error('Error:', err);
   res.status(500).json({ message: 'Internal server error' });
